@@ -3,3 +3,5 @@ venv/
 *.db
 *.db-journal
 __pycache__
+cert.pem
+key.pem

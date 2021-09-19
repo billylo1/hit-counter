@@ -38,6 +38,12 @@ class DbAccess:
         else:
             return data[0]
 
+    def set_count(self, connection, url, newvalue):
+        """ Get the count of a particular url """
+        cursor = connection.cursor()
+        cursor.execute('UPDATE url SET count=? WHERE url=?', (newvalue,url,))
+        connection.commit()
+
     def add_view(self, connection, url):
         """ Create url entry if needed and increase url count and add cookie value to views if value is not stored """
         cursor = connection.cursor()
